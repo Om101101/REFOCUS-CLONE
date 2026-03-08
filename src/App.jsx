@@ -1,12 +1,16 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Work from './components/Work';
+import Work from "./components/Work";
+import Stripes from "./components/Stripes";
+import Products from "./components/Products";
 
 function App() {
   return (
-    <div className="bg-zinc-900 w-full font-['satoshi'] h-screen text-white">
+    <div className="bg-zinc-900 w-full font-['satoshi'] min-h-screen text-white">
       <Navbar />
-      <Work/>
+      <Work />
+      <Stripes />
+      <Products />
     </div>
   );
 }
