@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 function Work() {
-  var images = [
+  const [images, setImages] = useState([
     {
       url: "https://cdn.prod.website-files.com/664dc8b6bc52b504509197f0/6697d8846629f4e91cbfc152_Cula%20-%204%203-p-1080.webp",
       top: "50%",
@@ -44,7 +45,30 @@ function Work() {
       left: "20%",
       isActive: false,
     },
-  ];
+  ]);
+  const { scrollYProgress } = useScroll();
+
+  scrollYProgress.on("change", (data) => {
+    switch(Math.floor(data * 100)) {  
+      case 0:
+        break;
+        case 1:
+        break;
+        case 2:
+        break;
+        case 3:
+        break;
+        case 4:
+        break;case 5:
+        break;case 6:
+        break;
+        case 0:
+        break;
+
+    }
+  })  
+
+  
 
   return (
     <div className="w-full mt-10 ">
@@ -57,6 +81,7 @@ function Work() {
             (elem, index) =>
               elem.isActive && (
                 <img
+                  key={index}
                   className="w-60 absolute rounded-lg -translate-x-[50%] -translate-y-[50%] "
                   src={elem.url}
                   style={{ top: elem.top, left: elem.left }}
